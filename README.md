@@ -1,4 +1,4 @@
-# RM Services — Premium Admin Dashboard Template
+# RMS Admin Suite — Premium Admin Dashboard Template
 
 A **reusable, offline-first admin dashboard template** built with pure **HTML + Tailwind CSS + Vanilla JS**.
 No React, no Next.js, no build step. Drop it into any project — PHP, Laravel, WordPress, Django, Node — and wire up your backend.
@@ -6,7 +6,7 @@ No React, no Next.js, no build step. Drop it into any project — PHP, Laravel, 
 ## What's inside
 
 ```
-rm-admin-template/
+rms-admin-suite-template/
 ├── assets/
 │   ├── css/style.css          # theme variables, dark mode, animations, print + RTL rules
 │   ├── js/tailwind.js         # Tailwind runtime (local — works offline)
