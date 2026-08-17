@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="indigo">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>System Preferences · RM Services Admin</title>
+<link rel="icon" type="image/svg+xml" href="assets/img/logo.svg"/>
+<link rel="stylesheet" href="assets/fonts/fonts.css"/>
+<link rel="stylesheet" href="assets/css/tailwind.compiled.css"/>
+<link rel="stylesheet" href="assets/css/style.css"/>
+<script>(function(){if(localStorage.getItem('rm-rtl')==='1')document.documentElement.dir='rtl';var t=localStorage.getItem('rm-theme');if(t)document.documentElement.dataset.theme=t;if(localStorage.getItem('rm-dark')==='1'||(!localStorage.getItem('rm-dark')&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark')})();</script>
+</head>
+<body class="font-sans bg-base text-slate-800 dark:text-slate-200">
+
+<div class="flex min-h-screen">
+  <div id="sidebar-overlay" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-40 hidden lg:hidden"></div>
+  <aside id="sidebar" data-testid="sidebar" class="fixed lg:sticky top-0 left-0 z-50 h-screen w-[272px] flex-none -translate-x-full lg:translate-x-0 transition-transform duration-300 bg-surface border-r border-slate-200/80 dark:border-slate-800 flex flex-col">
+    <div class="h-16 flex items-center gap-3 px-5 border-b border-slate-200/80 dark:border-slate-800 flex-none">
+      <img src="assets/img/logo.svg" class="w-9 h-9" alt="RM Services"/>
+      <div>
+        <p class="font-extrabold text-[15px] leading-tight text-slate-900 dark:text-white">RM <span class="rm-brand-text">Services</span></p>
+        <p class="text-[9px] uppercase tracking-[0.22em] text-slate-400 font-bold">Admin Suite</p>
+      </div>
+      <button onclick="RM.toggleSidebar()" class="ml-auto lg:hidden p-1.5 rounded-lg text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800" aria-label="Close menu">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+
+    <nav class="flex-1 overflow-y-auto px-3 pb-4">
+      <p class="px-3 pt-5 pb-1.5 text-[10px] font-extrabold uppercase tracking-[0.18em] text-slate-400 dark:text-slate-500">Dashboards</p>
+      <a href="index.html" data-testid="nav-ecommerce" class="rm-nav"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>Ecommerce</a>
+      <a href="dashboard-crm.html" data-testid="nav-crm" class="rm-nav"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>CRM</a>
+      <a href="dashboard-marketing.html" data-testid="nav-marketing" class="rm-nav"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg>Marketing</a>
+      <a href="meta-dashboard.html" data-testid="nav-meta-api" class="rm-nav"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>Meta API</a>
+
+      <p class="px-3 pt-5 pb-1.5 text-[10px] font-extrabold uppercase tracking-[0.18em] text-slate-400 dark:text-slate-500">Applications</p>
+      <a href="chat.html" data-testid="nav-chat" class="rm-nav"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>Meta Chat<span class="ml-auto text-[9px] font-extrabold px-1.5 py-0.5 rounded bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 uppercase">Meta</span></a>
+      <a href="quick-replies.html" data-testid="nav-quick-replies" class="rm-nav"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>Quick Replies</a>
+      <a href="whatsapp-templates.html" data-testid="nav-wa-templates" class="rm-nav"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="7" rx="1.5"/><rect x="3" y="14" width="9" height="7" rx="1.5"/><rect x="16" y="14" width="5" height="7" rx="1.5"/></svg>WA Templates</a>
+      <a href="broadcast.html" data-testid="nav-broadcast" class="rm-nav"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>Broadcast</a>
+      <a href="inquiries.html" data-testid="nav-inquiries" class="rm-nav"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg>Inquiries<span class="ml-auto text-[9px] font-extrabold px-1.5 py-0.5 rounded bg-red-500/15 text-red-500 uppercase">2 New</span></a>
+      <a href="tables.html" data-testid="nav-tables" class="rm-nav"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18"/></svg>Data Tables</a>
+      <a href="kanban.html" data-testid="nav-kanban" class="rm-nav"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="5" height="18" rx="1"/><rect x="10" y="3" width="5" height="12" rx="1"/><rect x="17" y="3" width="5" height="8" rx="1"/></svg>Kanban Board</a>
+      <a href="calendar.html" data-testid="nav-calendar" class="rm-nav"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Calendar</a>
+      <a href="notifications.html" data-testid="nav-notifications" class="rm-nav"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>Notifications</a>
+
+      <p class="px-3 pt-5 pb-1.5 text-[10px] font-extrabold uppercase tracking-[0.18em] text-slate-400 dark:text-slate-500">Management</p>
+      <a href="plans.html" data-testid="nav-plans" class="rm-nav"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg>Plans &amp; Subscriptions</a>
+      <a href="plan-management.html" data-testid="nav-plan-management" class="rm-nav"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Plan Management</a>
+      <a href="plan-create.html" data-testid="nav-plan-create" class="rm-nav"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>Create Plan</a>
+      <a href="landing-pages.html" data-testid="nav-landing-pages" class="rm-nav"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>Landing Pages</a>
+      <a href="payments.html" data-testid="nav-payments" class="rm-nav"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></svg>Payment History</a>
+      <a href="invoice.html" data-testid="nav-invoice" class="rm-nav"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>Invoice</a>
+      <a href="staff.html" data-testid="nav-staff" class="rm-nav"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M5 17c.7-1.7 2.2-2.5 4-2.5s3.3.8 4 2.5"/><path d="M15 9h4M15 13h4"/></svg>Staff &amp; Members</a>
+
+      <p class="px-3 pt-5 pb-1.5 text-[10px] font-extrabold uppercase tracking-[0.18em] text-slate-400 dark:text-slate-500">Content</p>
+      <a href="blog-list.html" data-testid="nav-blog-list" class="rm-nav"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M8 13h8M8 17h5"/></svg>All Posts</a>
+      <a href="blog-create.html" data-testid="nav-blog-create" class="rm-nav"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>New Post</a>
+      <a href="blog-categories.html" data-testid="nav-blog-categories" class="rm-nav"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></svg>Categories</a>
+      <a href="gallery.html" data-testid="nav-gallery" class="rm-nav"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.1-3.1a2 2 0 0 0-2.8 0L6 21"/></svg>Gallery</a>
+
+      <p class="px-3 pt-5 pb-1.5 text-[10px] font-extrabold uppercase tracking-[0.18em] text-slate-400 dark:text-slate-500">Pages</p>
+      <a href="login.html" data-testid="nav-login" class="rm-nav"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="m10 17 5-5-5-5"/><path d="M15 12H3"/></svg>Login</a>
+      <a href="register.html" data-testid="nav-register" class="rm-nav"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg>Register</a>
+      <a href="register-multi.html" data-testid="nav-register-multi" class="rm-nav"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4" cy="6" r="1.5"/><circle cx="4" cy="12" r="1.5"/><circle cx="4" cy="18" r="1.5"/></svg>Multi-Step Register</a>
+      <a href="forgot-password.html" data-testid="nav-forgot" class="rm-nav"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="4.5"/><path d="m21 2-9.6 9.6"/><path d="m15.5 7.5 3 3L22 7l-3-3"/></svg>Forgot Password</a>
+      <a href="otp-login.html" data-testid="nav-otp" class="rm-nav"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2.5"/><path d="M12 18h.01"/></svg>OTP Login</a>
+      <a href="search.html" data-testid="nav-search" class="rm-nav"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>Search</a>
+      <a href="starter.html" data-testid="nav-starter" class="rm-nav"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/></svg>Blank Starter</a>
+      <a href="404.html" data-testid="nav-404" class="rm-nav"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>404 Error</a>
+      <a href="maintenance.html" data-testid="nav-maintenance" class="rm-nav"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>Maintenance</a>
+      <a href="faq.html" data-testid="nav-faq" class="rm-nav"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>FAQ</a>
+      <a href="profile.html" data-testid="nav-profile" class="rm-nav"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/></svg>My Profile</a>
+      <a href="pricing.html" data-testid="nav-pricing" class="rm-nav"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2H2v10l9.3 9.3a2 2 0 0 0 2.8 0l7.2-7.2a2 2 0 0 0 0-2.8Z"/><circle cx="7" cy="7" r="1.5"/></svg>Pricing Page</a>
+      <a href="features.html" data-testid="nav-features" class="rm-nav"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 1.9 5.8L20 10l-6.1 1.2L12 17l-1.9-5.8L4 10l6.1-1.2Z"/></svg>Product Features</a>
+      <a href="terms.html" data-testid="nav-terms" class="rm-nav"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M10 9H8M16 13H8M16 17H8"/></svg>Terms of Service</a>
+      <a href="privacy.html" data-testid="nav-privacy" class="rm-nav"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1 1 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>Privacy Policy</a>
+      <a href="updates.html" data-testid="nav-updates" class="rm-nav"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>Updates Log</a>
+      <a href="about.html" data-testid="nav-about" class="rm-nav"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>About</a>
+      <a href="contact.html" data-testid="nav-contact" class="rm-nav"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>Contact</a>
+      <a href="changelog.html" data-testid="nav-changelog" class="rm-nav"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></svg>Changelog</a>
+      <a href="empty-states.html" data-testid="nav-empty-states" class="rm-nav"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4 3"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>Empty States</a>
+      <a href="cards.html" data-testid="nav-cards" class="rm-nav"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="10" rx="2"/><rect x="13" y="3" width="8" height="6" rx="2"/><rect x="13" y="11" width="8" height="10" rx="2"/><rect x="3" y="15" width="8" height="6" rx="2"/></svg>Dashboard Cards</a>
+      <a href="settings.html" data-testid="nav-settings" class="rm-nav"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1 2 0l.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>Settings</a>
+      <a href="preferences.html" data-testid="nav-preferences" class="rm-nav active"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3"/><path d="M2 14h4M10 8h4M18 16h4"/></svg>System Preferences</a>
+    </nav>
+
+    <div class="p-3 flex-none">
+      <div class="rounded-2xl bg-gradient-to-br from-primary-600 to-primary-700 p-4 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-15" style="background-image:url('assets/img/whatsapp-bg.svg')"></div>
+        <p class="relative text-white font-extrabold text-sm">RM Services Pro</p>
+        <p class="relative text-white/70 text-xs mt-1 leading-relaxed">Unlock broadcasts, automations & team seats.</p>
+        <button data-demo-toast="Upgrade flow (demo)" data-testid="sidebar-upgrade-btn" class="relative mt-3 w-full bg-white text-primary-700 text-xs font-extrabold rounded-lg py-2 hover:bg-primary-50 transition-colors">Upgrade Now</button>
+      </div>
+      <p class="text-center text-[10px] text-slate-400 font-bold mt-3">v2.1.0 · © 2026 RM Services</p>
+    </div>
+  </aside>
+
+  <div class="flex-1 flex flex-col min-w-0">
+    <header class="sticky top-0 z-30 h-16 flex items-center gap-2 sm:gap-3 px-4 sm:px-6 bg-surface/85 backdrop-blur-lg border-b border-slate-200/80 dark:border-slate-800 flex-none">
+      <button onclick="RM.toggleSidebar()" data-testid="sidebar-toggle" class="lg:hidden p-2 rounded-xl text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800" aria-label="Open menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <div class="hidden md:flex items-center flex-1 max-w-md relative">
+        <svg class="absolute left-3.5 text-slate-400" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <input data-testid="topbar-search" placeholder="Search…" class="w-full bg-slate-100/70 dark:bg-slate-800/60 border border-transparent focus:border-primary-500 focus:bg-surface rounded-xl pl-10 pr-14 py-2.5 text-sm placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/30 transition-all"/>
+        <kbd class="absolute right-3 text-[10px] font-bold text-slate-400 bg-surface border border-slate-200 dark:border-slate-700 rounded px-1.5 py-0.5">⌘K</kbd>
+      </div>
+
+      <div class="ml-auto flex items-center gap-1.5">
+        <div class="relative">
+          <button data-dropdown-toggle="theme-menu" data-testid="theme-picker-btn" class="p-2.5 rounded-xl text-slate-500 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" title="Color theme">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="1.5"/><circle cx="17.5" cy="10.5" r="1.5"/><circle cx="8.5" cy="7.5" r="1.5"/><circle cx="6.5" cy="12.5" r="1.5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.9 0 1.65-.75 1.65-1.69 0-.44-.18-.84-.44-1.13-.25-.29-.43-.68-.43-1.11A1.64 1.64 0 0 1 14.43 16.4h1.99A5.59 5.59 0 0 0 22 10.83C21.97 5.94 17.5 2 12 2z"/></svg>
+          </button>
+          <div id="theme-menu" data-dropdown-panel class="hidden absolute right-0 mt-2 w-44 bg-surface border border-slate-200 dark:border-slate-700 rounded-2xl shadow-pop p-3 z-50">
+            <p class="text-[10px] font-extrabold uppercase tracking-widest text-slate-400 mb-2.5 px-1">Color Theme</p>
+            <div class="flex items-center justify-between px-1">
+              <button data-theme-dot="indigo" onclick="RM.setTheme('indigo')" data-testid="theme-indigo" class="w-7 h-7 rounded-full transition-all" style="background:#6366F1" title="Indigo"></button>
+              <button data-theme-dot="emerald" onclick="RM.setTheme('emerald')" data-testid="theme-emerald" class="w-7 h-7 rounded-full transition-all" style="background:#10B981" title="Emerald"></button>
+              <button data-theme-dot="rose" onclick="RM.setTheme('rose')" data-testid="theme-rose" class="w-7 h-7 rounded-full transition-all" style="background:#F43F5E" title="Rose"></button>
+              <button data-theme-dot="amber" onclick="RM.setTheme('amber')" data-testid="theme-amber" class="w-7 h-7 rounded-full transition-all" style="background:#F59E0B" title="Amber"></button>
+              <button data-theme-dot="ocean" onclick="RM.setTheme('ocean')" data-testid="theme-ocean" class="w-7 h-7 rounded-full transition-all" style="background:#0EA5E9" title="Ocean"></button>
+            </div>
+          </div>
+        </div>
+        <button onclick="RM.toggleDark()" data-testid="dark-mode-toggle" class="p-2.5 rounded-xl text-slate-500 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" title="Toggle dark mode">
+          <svg class="dark:hidden" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <svg class="hidden dark:block" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        </button>
+        <div class="relative">
+          <button data-dropdown-toggle="profile-menu" data-testid="profile-btn" class="flex items-center gap-2.5 pl-1.5 pr-2 py-1.5 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+            <img src="assets/img/avatar-1.svg" class="w-8 h-8 rounded-full" alt="Rahul Mehta"/>
+            <span class="hidden sm:block text-left"><span class="block text-xs font-extrabold text-slate-800 dark:text-slate-100 leading-tight">Rahul Mehta</span><span class="block text-[10px] text-slate-400 font-semibold">Admin</span></span>
+            <svg class="hidden sm:block text-slate-400" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div id="profile-menu" data-dropdown-panel class="hidden absolute right-0 mt-2 w-52 bg-surface border border-slate-200 dark:border-slate-700 rounded-2xl shadow-pop p-2 z-50">
+            <div class="px-3 py-2.5 border-b border-slate-100 dark:border-slate-800 mb-1"><p class="text-sm font-extrabold text-slate-800 dark:text-slate-100">Rahul Mehta</p><p class="text-xs text-slate-400">admin@rmservices.com</p></div>
+            <a href="profile.html" data-testid="menu-my-profile" class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-sm font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">My Profile</a>
+            <a href="settings.html" class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-sm font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">Profile Settings</a>
+            <a href="login.html" class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-sm font-semibold text-red-500 hover:bg-red-50 dark:hover:bg-red-500/10 transition-colors">Sign out</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="flex-1 p-4 sm:p-6 lg:p-8" data-testid="preferences-page">
+      <div class="mb-7 rm-fade-up">
+        <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">Settings</h1>
+        <p class="text-sm text-slate-500 mt-1.5">Manage your application configuration and preferences</p>
+      </div>
+
+      <div id="pref-layout" class="grid lg:grid-cols-[280px_1fr] gap-6 items-start">
+        <!-- Inner settings nav -->
+        <div class="bg-surface rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-soft p-2.5 lg:sticky lg:top-24 rm-fade-up rm-d1" data-testid="pref-menu">
+            <button data-pref-nav="general" data-testid="pref-nav-general" class="pref-nav active">
+              <span class="pref-ico"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 0 20 15.3 15.3 0 0 1 0-20Z"/></svg></span>
+              <span class="min-w-0"><span class="pref-name block">General</span><span class="pref-sub block truncate">App info & preferences</span></span>
+            </button>
+            <button data-pref-nav="branding" data-testid="pref-nav-branding" class="pref-nav">
+              <span class="pref-ico"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 1.9 5.8L20 10l-6.1 1.2L12 17l-1.9-5.8L4 10l6.1-1.2Z"/></svg></span>
+              <span class="min-w-0"><span class="pref-name block">Branding</span><span class="pref-sub block truncate">Logos & icons</span></span>
+            </button>
+            <button data-pref-nav="channels" data-testid="pref-nav-channels" class="pref-nav">
+              <span class="pref-ico"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5M19.1 4.9C23 8.8 23 15.1 19.1 19"/><circle cx="12" cy="12" r="2"/></svg></span>
+              <span class="min-w-0"><span class="pref-name block">Channel Platforms</span><span class="pref-sub block truncate">Enable omnichannel platforms</span></span>
+            </button>
+            <button data-pref-nav="meta" data-testid="pref-nav-meta" class="pref-nav">
+              <span class="pref-ico"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="M8 15c1.5-4 2.5-6 4-6s2.5 2 4 6"/></svg></span>
+              <span class="min-w-0"><span class="pref-name block">Meta Configuration</span><span class="pref-sub block truncate">API credentials</span></span>
+            </button>
+            <button data-pref-nav="fb-insta" data-testid="pref-nav-fb-insta" class="pref-nav">
+              <span class="pref-ico"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></span>
+              <span class="min-w-0"><span class="pref-name block">Facebook & Instagram</span><span class="pref-sub block truncate">Lead webhook configuration</span></span>
+            </button>
+            <button data-pref-nav="email" data-testid="pref-nav-email" class="pref-nav">
+              <span class="pref-ico"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></span>
+              <span class="min-w-0"><span class="pref-name block">Email</span><span class="pref-sub block truncate">SMTP configuration</span></span>
+            </button>
+            <button data-pref-nav="google" data-testid="pref-nav-google" class="pref-nav">
+              <span class="pref-ico"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg></span>
+              <span class="min-w-0"><span class="pref-name block">Google</span><span class="pref-sub block truncate">Google API credentials</span></span>
+            </button>
+            <button data-pref-nav="aws" data-testid="pref-nav-aws" class="pref-nav">
+              <span class="pref-ico"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg></span>
+              <span class="min-w-0"><span class="pref-name block">AWS</span><span class="pref-sub block truncate">AWS S3 configuration</span></span>
+            </button>
+            <button data-pref-nav="limits" data-testid="pref-nav-limits" class="pref-nav">
+              <span class="pref-ico"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15v3M12 10v8M17 5v13"/></svg></span>
+              <span class="min-w-0"><span class="pref-name block">Limits</span><span class="pref-sub block truncate">File & group limits</span></span>
+            </button>
+            <button data-pref-nav="otp" data-testid="pref-nav-otp" class="pref-nav">
+              <span class="pref-ico"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
+              <span class="min-w-0"><span class="pref-name block">OTP Delivery</span><span class="pref-sub block truncate">Configure OTP delivery methods</span></span>
+            </button>
+            <button data-pref-nav="widget" data-testid="pref-nav-widget" class="pref-nav">
+              <span class="pref-ico"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg></span>
+              <span class="min-w-0"><span class="pref-name block">Landing Widget</span><span class="pref-sub block truncate">Configure dynamic landing widget</span></span>
+            </button>
+            <button data-pref-nav="maintenance" data-testid="pref-nav-maintenance" class="pref-nav">
+              <span class="pref-ico"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>
+              <span class="min-w-0"><span class="pref-name block">Maintenance</span><span class="pref-sub block truncate">Maintenance & error pages</span></span>
+            </button>
+            <button data-pref-nav="signup" data-testid="pref-nav-signup" class="pref-nav">
+              <span class="pref-ico"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg></span>
+              <span class="min-w-0"><span class="pref-name block">Signup Customization</span><span class="pref-sub block truncate">Signup agree line customization</span></span>
+            </button>
+        </div>
+
+        <!-- Panels -->
+        <div class="min-w-0 rm-fade-up rm-d2">
+          <div data-pref-panel="general" class="space-y-5">
+            <div class="bg-surface rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-soft p-5 flex flex-wrap items-center gap-4">
+              <span class="w-11 h-11 rounded-xl bg-primary-500/10 text-primary-500 flex items-center justify-center flex-none"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 0 20 15.3 15.3 0 0 1 0-20Z"/></svg></span>
+              <div><h2 class="text-base font-extrabold text-slate-900 dark:text-white">General</h2><p class="text-xs text-slate-400 font-medium">App info & preferences</p></div>
+              <div class="ml-auto flex gap-2">
+                <button data-pref-refresh data-testid="pref-refresh-general" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 text-xs font-extrabold text-slate-500 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>Refresh</button>
+                <button data-pref-save data-testid="pref-save-general" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-primary-600 hover:bg-primary-700 text-white text-xs font-extrabold shadow-soft transition-colors"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2Z"/><path d="M17 21v-8H7v8M7 3v5h8"/></svg>Save Changes</button>
+              </div>
+            </div>
+            <div class="bg-surface rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-soft p-6">
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
+          <div><h3 class="text-base font-extrabold text-slate-900 dark:text-white">Application Info</h3><p class="text-xs text-slate-400 font-medium mt-0.5">Basic information about your application.</p></div>
+          <div class="flex gap-2"></div>
+        </div>
+        <div><div class="grid sm:grid-cols-2 gap-4"><div><label class="block text-xs font-extrabold uppercase tracking-wider text-slate-400 mb-1.5">App Name</label><input type="text" value="RM Services" placeholder="" data-testid="pref-app-name" class="w-full bg-slate-100/70 dark:bg-slate-800/60 border border-transparent focus:border-primary-500 rounded-xl px-4 py-2.5 text-sm font-semibold placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/30 transition-all"/></div><div><label class="block text-xs font-extrabold uppercase tracking-wider text-slate-400 mb-1.5">App Email</label><input type="text" value="support@rmservices.com" placeholder="" class="w-full bg-slate-100/70 dark:bg-slate-800/60 border border-transparent focus:border-primary-500 rounded-xl px-4 py-2.5 text-sm font-semibold placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/30 transition-all"/></div><div><label class="block text-xs font-extrabold uppercase tracking-wider text-slate-400 mb-1.5">App Description</label><input type="text" value="WhatsApp Marketing & CRM Platform" placeholder="" class="w-full bg-slate-100/70 dark:bg-slate-800/60 border border-transparent focus:border-primary-500 rounded-xl px-4 py-2.5 text-sm font-semibold placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/30 transition-all"/></div><div><label class="block text-xs font-extrabold uppercase tracking-wider text-slate-400 mb-1.5">Support Email</label><input type="text" value="help@rmservices.com" placeholder="" class="w-full bg-slate-100/70 dark:bg-slate-800/60 border border-transparent focus:border-primary-500 rounded-xl px-4 py-2.5 text-sm font-semibold placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/30 transition-all"/></div><div><label class="block text-xs font-extrabold uppercase tracking-wider text-slate-400 mb-1.5">Default Theme Mode</label><select class="w-full bg-slate-100/70 dark:bg-slate-800/60 border border-transparent focus:border-primary-500 rounded-xl px-4 py-2.5 text-sm font-semibold placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/30 transition-all text-slate-600 dark:text-slate-300"><option>Light</option><option>Dark</option><option>Auto (system)</option></select></div><div><label class="block text-xs font-extrabold uppercase tracking-wider text-slate-400 mb-1.5">Session Expiration (days)</label><input type="number" value="7" placeholder="" class="w-full bg-slate-100/70 dark:bg-slate-800/60 border border-transparent focus:border-primary-500 rounded-xl px-4 py-2.5 text-sm font-semibold placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/30 transition-all"/></div></div></div>
+      </div><div class="bg-surface rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-soft p-6">
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
+          <div><h3 class="text-base font-extrabold text-slate-900 dark:text-white">Preferences</h3><p class="text-xs text-slate-400 font-medium mt-0.5">Control application-wide behavior.</p></div>
+          <div class="flex gap-2"></div>
+        </div>
+        <div><div class="flex items-center justify-between gap-4 py-3 border-b border-slate-100 dark:border-slate-800/70 last:border-0">
+          <div><p class="text-sm font-extrabold text-slate-800 dark:text-slate-100">Allow User Signup</p><p class="text-xs text-slate-400 font-medium mt-0.5">Allow new users to register for an account.</p></div>
+          <input type="checkbox" class="rm-switch pref-toggle" checked data-testid="pref-allow-signup"/>
+        </div><div class="flex items-center justify-between gap-4 py-3 border-b border-slate-100 dark:border-slate-800/70 last:border-0">
+          <div><p class="text-sm font-extrabold text-slate-800 dark:text-slate-100">Enable Cookie Preference Pop-up</p><p class="text-xs text-slate-400 font-medium mt-0.5">Display a GDPR-compliant cookie consent banner on landing pages.</p></div>
+          <input type="checkbox" class="rm-switch pref-toggle" checked/>
+        </div><div class="flex items-center justify-between gap-4 py-3 border-b border-slate-100 dark:border-slate-800/70 last:border-0">
+          <div><p class="text-sm font-extrabold text-slate-800 dark:text-slate-100">Demo Mode</p><p class="text-xs text-slate-400 font-medium mt-0.5">Mask sensitive data and show demo credentials on login.</p></div>
+          <input type="checkbox" class="rm-switch pref-toggle" checked data-testid="pref-demo-mode"/>
+        </div><div class="grid sm:grid-cols-2 gap-4 mt-5"><div><label class="block text-xs font-extrabold uppercase tracking-wider text-slate-400 mb-1.5">Demo User Email</label><input type="text" value="john@example.com" placeholder="" class="w-full bg-slate-100/70 dark:bg-slate-800/60 border border-transparent focus:border-primary-500 rounded-xl px-4 py-2.5 text-sm font-semibold placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/30 transition-all"/></div><div><label class="block text-xs font-extrabold uppercase tracking-wider text-slate-400 mb-1.5">Demo User Password</label><input type="password" value="123456789" placeholder="" class="w-full bg-slate-100/70 dark:bg-slate-800/60 border border-transparent focus:border-primary-500 rounded-xl px-4 py-2.5 text-sm font-semibold placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/30 transition-all"/></div><div><label class="block text-xs font-extrabold uppercase tracking-wider text-slate-400 mb-1.5">Demo Agent Email</label><input type="text" value="agent@example.com" placeholder="" class="w-full bg-slate-100/70 dark:bg-slate-800/60 border border-transparent focus:border-primary-500 rounded-xl px-4 py-2.5 text-sm font-semibold placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/30 transition-all"/></div><div><label class="block text-xs font-extrabold uppercase tracking-wider text-slate-400 mb-1.5">Demo Agent Password</label><input type="password" value="agent123" placeholder="" class="w-full bg-slate-100/70 dark:bg-slate-800/60 border border-transparent focus:border-primary-500 rounded-xl px-4 py-2.5 text-sm font-semibold placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/30 transition-all"/></div></div></div>
+      </div>
+          </div>
+          <div data-pref-panel="branding" class="space-y-5 hidden">
+            <div class="bg-surface rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-soft p-5 flex flex-wrap items-center gap-4">
+              <span class="w-11 h-11 rounded-xl bg-primary-500/10 text-primary-500 flex items-center justify-center flex-none"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 1.9 5.8L20 10l-6.1 1.2L12 17l-1.9-5.8L4 10l6.1-1.2Z"/></svg></span>
+              <div><h2 class="text-base font-extrabold text-slate-900 dark:text-white">Branding</h2><p class="text-xs text-slate-400 font-medium">Logos & icons</p></div>
+              <div class="ml-auto flex gap-2">
+                <button data-pref-refresh data-testid="pref-refresh-branding" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 text-xs font-extrabold text-slate-500 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>Refresh</button>
+                <button data-pref-save data-testid="pref-save-branding" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-primary-600 hover:bg-primary-700 text-white text-xs font-extrabold shadow-soft transition-colors"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2Z"/><path d="M17 21v-8H7v8M7 3v5h8"/></svg>Save Changes</button>
+              </div>
+            </div>
+            <div class="bg-surface rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-soft p-6">
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
+          <div><h3 class="text-base font-extrabold text-slate-900 dark:text-white">Logos & Icons</h3><p class="text-xs text-slate-400 font-medium mt-0.5">Set URLs or upload images for your application logos and icons.</p></div>
+          <div class="flex gap-2"></div>
+        </div>
+        <div><div class="grid sm:grid-cols-2 gap-4"><div class="flex items-center gap-4 rounded-xl border border-slate-200/80 dark:border-slate-800 p-3.5">
+          <span class="w-11 h-11 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200/70 dark:border-slate-700 flex items-center justify-center flex-none p-1.5"><img src="assets/img/logo.svg" class="w-full h-full object-contain" alt=""/></span>
+          <div class="flex-1 min-w-0"><p class="text-xs font-extrabold text-slate-800 dark:text-slate-100 mb-1">Favicon</p><input value="https://rmservices.com/uploads/favicon.png" class="w-full bg-slate-100/70 dark:bg-slate-800/60 border border-transparent focus:border-primary-500 rounded-xl px-4 py-2.5 text-sm font-semibold placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/30 transition-all text-xs"/></div>
+          <button data-demo-toast="Media library opens (demo)" class="px-3 py-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-[10px] font-extrabold text-slate-500 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors flex-none">Upload</button>
+        </div><div class="flex items-center gap-4 rounded-xl border border-slate-200/80 dark:border-slate-800 p-3.5">
+          <span class="w-11 h-11 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200/70 dark:border-slate-700 flex items-center justify-center flex-none p-1.5"><img src="assets/img/logo.svg" class="w-full h-full object-contain" alt=""/></span>
+          <div class="flex-1 min-w-0"><p class="text-xs font-extrabold text-slate-800 dark:text-slate-100 mb-1">Logo (Light Mode)</p><input value="https://rmservices.com/uploads/logo_light.png" class="w-full bg-slate-100/70 dark:bg-slate-800/60 border border-transparent focus:border-primary-500 rounded-xl px-4 py-2.5 text-sm font-semibold placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/30 transition-all text-xs"/></div>
+          <button data-demo-toast="Media library opens (demo)" class="px-3 py-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-[10px] font-extrabold text-slate-500 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors flex-none">Upload</button>
+        </div><div class="flex items-center gap-4 rounded-xl border border-slate-200/80 dark:border-slate-800 p-3.5">
+          <span class="w-11 h-11 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200/70 dark:border-slate-700 flex items-center justify-center flex-none p-1.5"><img src="assets/img/logo.svg" class="w-full h-full object-contain" alt=""/></span>
+          <div class="flex-1 min-w-0"><p class="text-xs font-extrabold text-slate-800 dark:text-slate-100 mb-1">Logo (Dark Mode)</p><input value="https://rmservices.com/uploads/logo_dark.png" class="w-full bg-slate-100/70 dark:bg-slate-800/60 border border-transparent focus:border-primary-500 rounded-xl px-4 py-2.5 text-sm font-semibold placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/30 transition-all text-xs"/></div>
+          <button data-demo-toast="Media library opens (demo)" class="px-3 py-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-[10px] font-extrabold text-slate-500 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors flex-none">Upload</button>
+        </div><div class="flex items-center gap-4 rounded-xl border border-slate-200/80 dark:border-slate-800 p-3.5">
+          <span class="w-11 h-11 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200/70 dark:border-slate-700 flex items-center justify-center flex-none p-1.5"><img src="assets/img/logo.svg" class="w-full h-full object-contain" alt=""/></span>
+          <div class="flex-1 min-w-0"><p class="text-xs font-extrabold text-slate-800 dark:text-slate-100 mb-1">Sidebar Favicon (Light)</p><input value="https://rmservices.com/uploads/sidebar_light.png" class="w-full bg-slate-100/70 dark:bg-slate-800/60 border border-transparent focus:border-primary-500 rounded-xl px-4 py-2.5 text-sm font-semibold placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/30 transition-all text-xs"/></div>
+          <button data-demo-toast="Media library opens (demo)" class="px-3 py-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-[10px] font-extrabold text-slate-500 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors flex-none">Upload</button>
+        </div><div class="flex items-center gap-4 rounded-xl border border-slate-200/80 dark:border-slate-800 p-3.5">
+          <span class="w-11 h-11 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200/70 dark:border-slate-700 flex items-center justify-center flex-none p-1.5"><img src="assets/img/logo.svg" class="w-full h-full object-contain" alt=""/></span>
+          <div class="flex-1 min-w-0"><p class="text-xs font-extrabold text-slate-800 dark:text-slate-100 mb-1">Sidebar Favicon (Dark)</p><input value="https://rmservices.com/uploads/sidebar_dark.png" class="w-full bg-slate-100/70 dark:bg-slate-800/60 border border-transparent focus:border-primary-500 rounded-xl px-4 py-2.5 text-sm font-semibold placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/30 transition-all text-xs"/></div>
+          <button data-demo-toast="Media library opens (demo)" class="px-3 py-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-[10px] font-extrabold text-slate-500 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors flex-none">Upload</button>
+        </div></div></div>
+      </div>
+          </div>
+          <div data-pref-panel="channels" class="space-y-5 hidden">
+            <div class="bg-surface rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-soft p-5 flex flex-wrap items-center gap-4">
+              <span class="w-11 h-11 rounded-xl bg-primary-500/10 text-primary-500 flex items-center justify-center flex-none"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5M19.1 4.9C23 8.8 23 15.1 19.1 19"/><circle cx="12" cy="12" r="2"/></svg></span>
+              <div><h2 class="text-base font-extrabold text-slate-900 dark:text-white">Channel Platforms</h2><p class="text-xs text-slate-400 font-medium">Enable omnichannel platforms</p></div>
+              <div class="ml-auto flex gap-2">
+                <button data-pref-refresh data-testid="pref-refresh-channels" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 text-xs font-extrabold text-slate-500 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>Refresh</button>
+                <button data-pref-save data-testid="pref-save-channels" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-primary-600 hover:bg-primary-700 text-white text-xs font-extrabold shadow-soft transition-colors"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2Z"/><path d="M17 21v-8H7v8M7 3v5h8"/></svg>Save Changes</button>
+              </div>
+            </div>
+            <div class="bg-surface rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-soft p-6">
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
+          <div><h3 class="text-base font-extrabold text-slate-900 dark:text-white">Omnichannel Platforms</h3><p class="text-xs text-slate-400 font-medium mt-0.5">Choose which channels your users can connect.</p></div>
+          <div class="flex gap-2"></div>
+        </div>
+        <div><div class="grid sm:grid-cols-2 gap-4"><div class="flex items-center gap-4 rounded-xl border border-slate-200/80 dark:border-slate-800 p-4">
+          <span class="w-10 h-10 rounded-xl bg-primary-500/10 text-primary-500 flex items-center justify-center flex-none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg></span>
+          <div class="flex-1 min-w-0"><p class="text-sm font-extrabold text-slate-800 dark:text-slate-100">WhatsApp Business</p><p class="text-xs text-slate-400 font-medium">Broadcasts, chat & templates via Meta API</p></div>
+          <input type="checkbox" class="rm-switch pref-toggle" checked/>
+        </div><div class="flex items-center gap-4 rounded-xl border border-slate-200/80 dark:border-slate-800 p-4">
+          <span class="w-10 h-10 rounded-xl bg-primary-500/10 text-primary-500 flex items-center justify-center flex-none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></span>
+          <div class="flex-1 min-w-0"><p class="text-sm font-extrabold text-slate-800 dark:text-slate-100">Instagram DM</p><p class="text-xs text-slate-400 font-medium">Reply to story mentions and DMs</p></div>
+          <input type="checkbox" class="rm-switch pref-toggle" checked/>
+        </div><div class="flex items-center gap-4 rounded-xl border border-slate-200/80 dark:border-slate-800 p-4">
+          <span class="w-10 h-10 rounded-xl bg-primary-500/10 text-primary-500 flex items-center justify-center flex-none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></span>
+          <div class="flex-1 min-w-0"><p class="text-sm font-extrabold text-slate-800 dark:text-slate-100">Facebook Messenger</p><p class="text-xs text-slate-400 font-medium">Page inbox inside the team inbox</p></div>
+          <input type="checkbox" class="rm-switch pref-toggle"/>
+        </div><div class="flex items-center gap-4 rounded-xl border border-slate-200/80 dark:border-slate-800 p-4">
+          <span class="w-10 h-10 rounded-xl bg-primary-500/10 text-primary-500 flex items-center justify-center flex-none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg></span>
+          <div class="flex-1 min-w-0"><p class="text-sm font-extrabold text-slate-800 dark:text-slate-100">Telegram</p><p class="text-xs text-slate-400 font-medium">Bot-powered support channel</p></div>
+          <input type="checkbox" class="rm-switch pref-toggle"/>
+        </div><div class="flex items-center gap-4 rounded-xl border border-slate-200/80 dark:border-slate-800 p-4">
+          <span class="w-10 h-10 rounded-xl bg-primary-500/10 text-primary-500 flex items-center justify-center flex-none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2.5"/><path d="M12 18h.01"/></svg></span>
+          <div class="flex-1 min-w-0"><p class="text-sm font-extrabold text-slate-800 dark:text-slate-100">SMS Fallback</p><p class="text-xs text-slate-400 font-medium">Text fallback when WhatsApp fails</p></div>
+          <input type="checkbox" class="rm-switch pref-toggle"/>
+        </div></div></div>
+      </div>
+          </div>
+          <div data-pref-panel="meta" class="space-y-5 hidden">
+            <div class="bg-surface rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-soft p-5 flex flex-wrap items-center gap-4">
+              <span class="w-11 h-11 rounded-xl bg-primary-500/10 text-primary-500 flex items-center justify-center flex-none"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="M8 15c1.5-4 2.5-6 4-6s2.5 2 4 6"/></svg></span>
+              <div><h2 class="text-base font-extrabold text-slate-900 dark:text-white">Meta Configuration</h2><p class="text-xs text-slate-400 font-medium">API credentials</p></div>
+              <div class="ml-auto flex gap-2">
+                <button data-pref-refresh data-testid="pref-refresh-meta" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 text-xs font-extrabold text-slate-500 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>Refresh</button>
+                <button data-pref-save data-testid="pref-save-meta" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-primary-600 hover:bg-primary-700 text-white text-xs font-extrabold shadow-soft transition-colors"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2Z"/><path d="M17 21v-8H7v8M7 3v5h8"/></svg>Save Changes</button>
+              </div>
+            </div>
+            <div class="bg-surface rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-soft p-6">
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
+          <div><h3 class="text-base font-extrabold text-slate-900 dark:text-white">Connection Methods</h3><p class="text-xs text-slate-400 font-medium mt-0.5">Select which connection methods are available for users to connect their WhatsApp accounts.</p></div>
+          <div class="flex gap-2"></div>
+        </div>
+        <div><div class="grid sm:grid-cols-3 gap-4"><button type="button" data-pref-method class="pref-method">
+            <span class="pm-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            <span class="w-9 h-9 rounded-lg bg-primary-500/10 text-primary-500 flex items-center justify-center mb-3"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></span>
+            <p class="text-sm font-extrabold text-slate-800 dark:text-slate-100">Manual</p>
+            <p class="text-xs text-slate-400 font-medium mt-0.5">Direct number entry</p>
+          </button><button type="button" data-pref-method class="pref-method selected">
+            <span class="pm-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            <span class="w-9 h-9 rounded-lg bg-primary-500/10 text-primary-500 flex items-center justify-center mb-3"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM21 14v7h-7"/></svg></span>
+            <p class="text-sm font-extrabold text-slate-800 dark:text-slate-100">QR Scan</p>
+            <p class="text-xs text-slate-400 font-medium mt-0.5">Scan to connect</p>
+          </button><button type="button" data-pref-method class="pref-method selected">
+            <span class="pm-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            <span class="w-9 h-9 rounded-lg bg-primary-500/10 text-primary-500 flex items-center justify-center mb-3"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="m10 17 5-5-5-5"/><path d="M15 12H3"/></svg></span>
+            <p class="text-sm font-extrabold text-slate-800 dark:text-slate-100">Embedded Signup</p>
+            <p class="text-xs text-slate-400 font-medium mt-0.5">Meta onboarding flow</p>
+          </button></div></div>
+      </div><div class="bg-surface rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-soft p-6">
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
+          <div><h3 class="text-base font-extrabold text-slate-900 dark:text-white">Meta API Credentials</h3><p class="text-xs text-slate-400 font-medium mt-0.5">Configure your Meta App API credentials for WhatsApp and Instagram.</p></div>
+          <div class="flex gap-2"><button data-pref-collapse class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-700 text-xs font-extrabold text-slate-500 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 10 8 10 8a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 8 10 8a9.74 9.74 0 0 0 5.39-1.61"/><path d="m2 2 20 20"/></svg><span>Hide</span></button></div>
+        </div>
+        <div data-pref-body><div class="grid sm:grid-cols-2 gap-4"><div><label class="block text-xs font-extrabold uppercase tracking-wider text-slate-400 mb-1.5">App ID</label><input type="text" value="" placeholder="Your Meta App ID" data-testid="pref-meta-appid" class="w-full bg-slate-100/70 dark:bg-slate-800/60 border border-transparent focus:border-primary-500 rounded-xl px-4 py-2.5 text-sm font-semibold placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/30 transition-all"/></div><div><label class="block text-xs font-extrabold uppercase tracking-wider text-slate-400 mb-1.5">App Secret</label><input type="password" value="" placeholder="Your Meta App Secret" class="w-full bg-slate-100/70 dark:bg-slate-800/60 border border-transparent focus:border-primary-500 rounded-xl px-4 py-2.5 text-sm font-semibold placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/30 transition-all"/></div><div><label class="block text-xs font-extrabold uppercase tracking-wider text-slate-400 mb-1.5">WhatsApp Configuration ID</label><input type="text" value="" placeholder="WhatsApp Configuration ID" class="w-full bg-slate-100/70 dark:bg-slate-800/60 border border-transparent focus:border-primary-500 rounded-xl px-4 py-2.5 text-sm font-semibold placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/30 transition-all"/></div><div><label class="block text-xs font-extrabold uppercase tracking-wider text-slate-400 mb-1.5">Webhook Verification Token</label><input type="text" value="v3r1fY_T0k3n_9x8z7" placeholder="" class="w-full bg-slate-100/70 dark:bg-slate-800/60 border border-transparent focus:border-primary-500 rounded-xl px-4 py-2.5 text-sm font-semibold placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/30 transition-all"/></div></div><div class="mt-4"><div><label class="block text-xs font-extrabold uppercase tracking-wider text-slate-400 mb-1.5">WhatsApp Webhook URL</label><input type="text" value="https://rmservices.com/webhook/whatsapp" placeholder="" class="w-full bg-slate-100/70 dark:bg-slate-800/60 border border-transparent focus:border-primary-500 rounded-xl px-4 py-2.5 text-sm font-semibold placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/30 transition-all"/></div></div></div>
+      </div><div class="bg-surface rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-soft p-6">
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
+          <div><h3 class="text-base font-extrabold text-slate-900 dark:text-white">Instagram API Credentials</h3><p class="text-xs text-slate-400 font-medium mt-0.5">Dedicated Instagram App credentials for Business Login.</p></div>
+          <div class="flex gap-2"><button data-pref-collapse class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-700 text-xs font-extrabold text-slate-500 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 10 8 10 8a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 8 10 8a9.74 9.74 0 0 0 5.39-1.61"/><path d="m2 2 20 20"/></svg><span>Hide</span></button></div>
+        </div>
+        <div data-pref-body><div class="grid sm:grid-cols-2 gap-4"><div><label class="block text-xs font-extrabold uppercase tracking-wider text-slate-400 mb-1.5">Instagram App ID</label><input type="text" value="" placeholder="Instagram App ID" class="w-full bg-slate-100/70 dark:bg-slate-800/60 border border-transparent focus:border-primary-500 rounded-xl px-4 py-2.5 text-sm font-semibold placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/30 transition-all"/></div><div><label class="block text-xs font-extrabold uppercase tracking-wider text-slate-400 mb-1.5">Instagram App Secret</label><input type="password" value="" placeholder="Instagram App Secret" class="w-full bg-slate-100/70 dark:bg-slate-800/60 border border-transparent focus:border-primary-500 rounded-xl px-4 py-2.5 text-sm font-semibold placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/30 transition-all"/></div></div></div>
+      </div>
+          </div>
+          <div data-pref-panel="fb-insta" class="space-y-5 hidden">
+            <div class="bg-surface rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-soft p-5 flex flex-wrap items-center gap-4">
+              <span class="w-11 h-11 rounded-xl bg-primary-500/10 text-primary-500 flex items-center justify-center flex-none"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></span>
+              <div><h2 class="text-base font-extrabold text-slate-900 dark:text-white">Facebook & Instagram</h2><p class="text-xs text-slate-400 font-medium">Lead webhook configuration</p></div>
+              <div class="ml-auto flex gap-2">
+                <button data-pref-refresh data-testid="pref-refresh-fb-insta" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 text-xs font-extrabold text-slate-500 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>Refresh</button>
+                <button data-pref-save data-testid="pref-save-fb-insta" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-primary-600 hover:bg-primary-700 text-white text-xs font-extrabold shadow-soft transition-colors"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2Z"/><path d="M17 21v-8H7v8M7 3v5h8"/></svg>Save Changes</button>
+              </div>
+            </div>
+            <div class="bg-surface rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-soft p-6">
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
+          <div><h3 class="text-base font-extrabold text-slate-900 dark:text-white">Lead Webhook Configuration</h3><p class="text-xs text-slate-400 font-medium mt-0.5">Sync Facebook & Instagram lead ads straight into the CRM.</p></div>
+          <div class="flex gap-2"></div>
+        </div>
+        <div><div class="grid sm:grid-cols-2 gap-4"><div><label class="block text-xs font-extrabold uppercase tracking-wider text-slate-400 mb-1.5">Lead Webhook URL</label><input type="text" value="https://rmservices.com/webhook/meta-leads" placeholder="" class="w-full bg-slate-100/70 dark:bg-slate-800/60 border border-transparent focus:border-primary-500 rounded-xl px-4 py-2.5 text-sm font-semibold placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/30 transition-all"/></div><div><label class="block text-xs font-extrabold uppercase tracking-wider text-slate-400 mb-1.5">Lead Access Token</label><input type="password" value="" placeholder="EAAG..." class="w-full bg-slate-100/70 dark:bg-slate-800/60 border border-transparent focus:border-primary-500 rounded-xl px-4 py-2.5 text-sm font-semibold placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/30 transition-all"/></div><div><label class="block text-xs font-extrabold uppercase tracking-wider text-slate-400 mb-1.5">Default Page ID</label><input type="text" value="104382917465" placeholder="" class="w-full bg-slate-100/70 dark:bg-slate-800/60 border border-transparent focus:border-primary-500 rounded-xl px-4 py-2.5 text-sm font-semibold placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/30 transition-all"/></div><div><label class="block text-xs font-extrabold uppercase tracking-wider text-slate-400 mb-1.5">Lead Sync Frequency</label><select class="w-full bg-slate-100/70 dark:bg-slate-800/60 border border-transparent focus:border-primary-500 rounded-xl px-4 py-2.5 text-sm font-semibold placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/30 transition-all text-slate-600 dark:text-slate-300"><option>Realtime</option><option>Every 15 minutes</option><option>Hourly</option></select></div></div><div class="mt-4"><div class="flex items-center justify-between gap-4 py-3 border-b border-slate-100 dark:border-slate-800/70 last:border-0">
+          <div><p class="text-sm font-extrabold text-slate-800 dark:text-slate-100">Auto-create inquiry for new leads</p><p class="text-xs text-slate-400 font-medium mt-0.5">New leads appear instantly in the Inquiries inbox.</p></div>
+          <input type="checkbox" class="rm-switch pref-toggle" checked/>
+        </div></div></div>
+      </div>
+          </div>
+          <div data-pref-panel="email" class="space-y-5 hidden">
+            <div class="bg-surface rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-soft p-5 flex flex-wrap items-center gap-4">
+              <span class="w-11 h-11 rounded-xl bg-primary-500/10 text-primary-500 flex items-center justify-center flex-none"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></span>
+              <div><h2 class="text-base font-extrabold text-slate-900 dark:text-white">Email</h2><p class="text-xs text-slate-400 font-medium">SMTP configuration</p></div>
+              <div class="ml-auto flex gap-2">
+                <button data-pref-refresh data-testid="pref-refresh-email" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 text-xs font-extrabold text-slate-500 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>Refresh</button>
+                <button data-pref-save data-testid="pref-save-email" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-primary-600 hover:bg-primary-700 text-white text-xs font-extrabold shadow-soft transition-colors"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2Z"/><path d="M17 21v-8H7v8M7 3v5h8"/></svg>Save Changes</button>
+              </div>
+            </div>
+            <div class="bg-surface rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-soft p-6">
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
+          <div><h3 class="text-base font-extrabold text-slate-900 dark:text-white">SMTP Configuration</h3><p class="text-xs text-slate-400 font-medium mt-0.5">Configure outgoing email via SMTP.</p></div>
+          <div class="flex gap-2"><button data-pref-test="email" data-testid="pref-test-email" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-700 text-xs font-extrabold text-slate-500 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>Test Configuration</button><button data-pref-collapse class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-700 text-xs font-extrabold text-slate-500 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 10 8 10 8a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 8 10 8a9.74 9.74 0 0 0 5.39-1.61"/><path d="m2 2 20 20"/></svg><span>Hide</span></button></div>
+        </div>
+        <div data-pref-body><div class="grid sm:grid-cols-2 gap-4"><div><label class="block text-xs font-extrabold uppercase tracking-wider text-slate-400 mb-1.5">SMTP Host</label><input type="text" value="smtp.gmail.com" placeholder="" data-testid="pref-smtp-host" class="w-full bg-slate-100/70 dark:bg-slate-800/60 border border-transparent focus:border-primary-500 rounded-xl px-4 py-2.5 text-sm font-semibold placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/30 transition-all"/></div><div><label class="block text-xs font-extrabold uppercase tracking-wider text-slate-400 mb-1.5">SMTP Port</label><input type="number" value="587" placeholder="" class="w-full bg-slate-100/70 dark:bg-slate-800/60 border border-transparent focus:border-primary-500 rounded-xl px-4 py-2.5 text-sm font-semibold placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/30 transition-all"/></div><div><label class="block text-xs font-extrabold uppercase tracking-wider text-slate-400 mb-1.5">SMTP Username</label><input type="text" value="your@email.com" placeholder="" class="w-full bg-slate-100/70 dark:bg-slate-800/60 border border-transparent focus:border-primary-500 rounded-xl px-4 py-2.5 text-sm font-semibold placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/30 transition-all"/></div><div><label class="block text-xs font-extrabold uppercase tracking-wider text-slate-400 mb-1.5">SMTP Password</label><input type="password" value="********" placeholder="" class="w-full bg-slate-100/70 dark:bg-slate-800/60 border border-transparent focus:border-primary-500 rounded-xl px-4 py-2.5 text-sm font-semibold placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/30 transition-all"/></div></div></div>
+      </div><div class="bg-surface rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-soft p-6">
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
+          <div><h3 class="text-base font-extrabold text-slate-900 dark:text-white">Sender Details</h3><p class="text-xs text-slate-400 font-medium mt-0.5">Set the name and email address shown to recipients.</p></div>
+          <div class="flex gap-2"></div>
+        </div>
+        <div><div class="grid sm:grid-cols-2 gap-4"><div><label class="block text-xs font-extrabold uppercase tracking-wider text-slate-400 mb-1.5">From Name</label><input type="text" value="RM Services" placeholder="" class="w-full bg-slate-100/70 dark:bg-slate-800/60 border border-transparent focus:border-primary-500 rounded-xl px-4 py-2.5 text-sm font-semibold placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/30 transition-all"/></div><div><label class="block text-xs font-extrabold uppercase tracking-wider text-slate-400 mb-1.5">From Email</label><input type="text" value="noreply@rmservices.com" placeholder="" class="w-full bg-slate-100/70 dark:bg-slate-800/60 border border-transparent focus:border-primary-500 rounded-xl px-4 py-2.5 text-sm font-semibold placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/30 transition-all"/></div></div></div>
+      </div>
+          </div>
+          <div data-pref-panel="google" class="space-y-5 hidden">
+            <div class="bg-surface rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-soft p-5 flex flex-wrap items-center gap-4">
+              <span class="w-11 h-11 rounded-xl bg-primary-500/10 text-primary-500 flex items-center justify-center flex-none"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg></span>
+              <div><h2 class="text-base font-extrabold text-slate-900 dark:text-white">Google</h2><p class="text-xs text-slate-400 font-medium">Google API credentials</p></div>
+              <div class="ml-auto flex gap-2">
+                <button data-pref-refresh data-testid="pref-refresh-google" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 text-xs font-extrabold text-slate-500 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>Refresh</button>
+                <button data-pref-save data-testid="pref-save-google" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-primary-600 hover:bg-primary-700 text-white text-xs font-extrabold shadow-soft transition-colors"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2Z"/><path d="M17 21v-8H7v8M7 3v5h8"/></svg>Save Changes</button>
+              </div>
+            </div>
+            <div class="bg-surface rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-soft p-6">
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
+          <div><h3 class="text-base font-extrabold text-slate-900 dark:text-white">Google API Credentials</h3><p class="text-xs text-slate-400 font-medium mt-0.5">Enable Google login and Drive imports.</p></div>
+          <div class="flex gap-2"></div>
+        </div>
+        <div><div class="grid sm:grid-cols-2 gap-4"><div><label class="block text-xs font-extrabold uppercase tracking-wider text-slate-400 mb-1.5">Client ID</label><input type="text" value="" placeholder="xxxx.apps.googleusercontent.com" data-testid="pref-google-client" class="w-full bg-slate-100/70 dark:bg-slate-800/60 border border-transparent focus:border-primary-500 rounded-xl px-4 py-2.5 text-sm font-semibold placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/30 transition-all"/></div><div><label class="block text-xs font-extrabold uppercase tracking-wider text-slate-400 mb-1.5">Client Secret</label><input type="password" value="" placeholder="GOCSPX-…" class="w-full bg-slate-100/70 dark:bg-slate-800/60 border border-transparent focus:border-primary-500 rounded-xl px-4 py-2.5 text-sm font-semibold placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/30 transition-all"/></div></div><div class="mt-4"><div><label class="block text-xs font-extrabold uppercase tracking-wider text-slate-400 mb-1.5">Redirect URI</label><input type="text" value="https://rmservices.com/auth/google/callback" placeholder="" class="w-full bg-slate-100/70 dark:bg-slate-800/60 border border-transparent focus:border-primary-500 rounded-xl px-4 py-2.5 text-sm font-semibold placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/30 transition-all"/></div></div><div class="mt-4"><div class="flex items-center justify-between gap-4 py-3 border-b border-slate-100 dark:border-slate-800/70 last:border-0">
+          <div><p class="text-sm font-extrabold text-slate-800 dark:text-slate-100">Enable Google Sign-In</p><p class="text-xs text-slate-400 font-medium mt-0.5">Show "Continue with Google" on login and register pages.</p></div>
+          <input type="checkbox" class="rm-switch pref-toggle" checked/>
+        </div><div class="flex items-center justify-between gap-4 py-3 border-b border-slate-100 dark:border-slate-800/70 last:border-0">
+          <div><p class="text-sm font-extrabold text-slate-800 dark:text-slate-100">Google Drive media import</p><p class="text-xs text-slate-400 font-medium mt-0.5">Let users pick broadcast media from Drive.</p></div>
+          <input type="checkbox" class="rm-switch pref-toggle"/>
+        </div></div></div>
+      </div>
+          </div>
+          <div data-pref-panel="aws" class="space-y-5 hidden">
+            <div class="bg-surface rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-soft p-5 flex flex-wrap items-center gap-4">
+              <span class="w-11 h-11 rounded-xl bg-primary-500/10 text-primary-500 flex items-center justify-center flex-none"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg></span>
+              <div><h2 class="text-base font-extrabold text-slate-900 dark:text-white">AWS</h2><p class="text-xs text-slate-400 font-medium">AWS S3 configuration</p></div>
+              <div class="ml-auto flex gap-2">
+                <button data-pref-refresh data-testid="pref-refresh-aws" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 text-xs font-extrabold text-slate-500 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>Refresh</button>
+                <button data-pref-save data-testid="pref-save-aws" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-primary-600 hover:bg-primary-700 text-white text-xs font-extrabold shadow-soft transition-colors"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2Z"/><path d="M17 21v-8H7v8M7 3v5h8"/></svg>Save Changes</button>
+              </div>
+            </div>
+            <div class="bg-surface rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-soft p-6">
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
+          <div><h3 class="text-base font-extrabold text-slate-900 dark:text-white">AWS S3 Configuration</h3><p class="text-xs text-slate-400 font-medium mt-0.5">Store broadcast media and attachments on S3.</p></div>
+          <div class="flex gap-2"></div>
+        </div>
+        <div><div class="grid sm:grid-cols-2 gap-4"><div><label class="block text-xs font-extrabold uppercase tracking-wider text-slate-400 mb-1.5">Access Key ID</label><input type="text" value="" placeholder="AKIA…" data-testid="pref-aws-key" class="w-full bg-slate-100/70 dark:bg-slate-800/60 border border-transparent focus:border-primary-500 rounded-xl px-4 py-2.5 text-sm font-semibold placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/30 transition-all"/></div><div><label class="block text-xs font-extrabold uppercase tracking-wider text-slate-400 mb-1.5">Secret Access Key</label><input type="password" value="" placeholder="" class="w-full bg-slate-100/70 dark:bg-slate-800/60 border border-transparent focus:border-primary-500 rounded-xl px-4 py-2.5 text-sm font-semibold placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/30 transition-all"/></div><div><label class="block text-xs font-extrabold uppercase tracking-wider text-slate-400 mb-1.5">Bucket Name</label><input type="text" value="rm-services-media" placeholder="" class="w-full bg-slate-100/70 dark:bg-slate-800/60 border border-transparent focus:border-primary-500 rounded-xl px-4 py-2.5 text-sm font-semibold placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/30 transition-all"/></div><div><label class="block text-xs font-extrabold uppercase tracking-wider text-slate-400 mb-1.5">Region</label><select class="w-full bg-slate-100/70 dark:bg-slate-800/60 border border-transparent focus:border-primary-500 rounded-xl px-4 py-2.5 text-sm font-semibold placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/30 transition-all text-slate-600 dark:text-slate-300"><option>ap-south-1 (Mumbai)</option><option>ap-southeast-1 (Singapore)</option><option>us-east-1 (N. Virginia)</option></select></div></div><div class="mt-4"><div class="flex items-center justify-between gap-4 py-3 border-b border-slate-100 dark:border-slate-800/70 last:border-0">
+          <div><p class="text-sm font-extrabold text-slate-800 dark:text-slate-100">Use S3 for media storage</p><p class="text-xs text-slate-400 font-medium mt-0.5">When off, files stay on local server storage.</p></div>
+          <input type="checkbox" class="rm-switch pref-toggle" checked/>
+        </div></div></div>
+      </div>
+          </div>
+          <div data-pref-panel="limits" class="space-y-5 hidden">
+            <div class="bg-surface rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-soft p-5 flex flex-wrap items-center gap-4">
+              <span class="w-11 h-11 rounded-xl bg-primary-500/10 text-primary-500 flex items-center justify-center flex-none"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15v3M12 10v8M17 5v13"/></svg></span>
+              <div><h2 class="text-base font-extrabold text-slate-900 dark:text-white">Limits</h2><p class="text-xs text-slate-400 font-medium">File & group limits</p></div>
+              <div class="ml-auto flex gap-2">
+                <button data-pref-refresh data-testid="pref-refresh-limits" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 text-xs font-extrabold text-slate-500 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>Refresh</button>
+                <button data-pref-save data-testid="pref-save-limits" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-primary-600 hover:bg-primary-700 text-white text-xs font-extrabold shadow-soft transition-colors"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2Z"/><path d="M17 21v-8H7v8M7 3v5h8"/></svg>Save Changes</button>
+              </div>
+            </div>
+            <div class="bg-surface rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-soft p-6">
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
+          <div><h3 class="text-base font-extrabold text-slate-900 dark:text-white">File & Group Limits</h3><p class="text-xs text-slate-400 font-medium mt-0.5">Cap resource usage per workspace.</p></div>
+          <div class="flex gap-2"></div>
+        </div>
+        <div><div class="grid sm:grid-cols-2 gap-4"><div><label class="block text-xs font-extrabold uppercase tracking-wider text-slate-400 mb-1.5">Max Upload Size (MB)</label><input type="number" value="25" placeholder="" class="w-full bg-slate-100/70 dark:bg-slate-800/60 border border-transparent focus:border-primary-500 rounded-xl px-4 py-2.5 text-sm font-semibold placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/30 transition-all"/></div><div><label class="block text-xs font-extrabold uppercase tracking-wider text-slate-400 mb-1.5">Max Contacts per Import</label><input type="number" value="100000" placeholder="" class="w-full bg-slate-100/70 dark:bg-slate-800/60 border border-transparent focus:border-primary-500 rounded-xl px-4 py-2.5 text-sm font-semibold placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/30 transition-all"/></div><div><label class="block text-xs font-extrabold uppercase tracking-wider text-slate-400 mb-1.5">Max Group Members</label><input type="number" value="256" placeholder="" class="w-full bg-slate-100/70 dark:bg-slate-800/60 border border-transparent focus:border-primary-500 rounded-xl px-4 py-2.5 text-sm font-semibold placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/30 transition-all"/></div><div><label class="block text-xs font-extrabold uppercase tracking-wider text-slate-400 mb-1.5">Max Templates per Campaign</label><input type="number" value="10" placeholder="" class="w-full bg-slate-100/70 dark:bg-slate-800/60 border border-transparent focus:border-primary-500 rounded-xl px-4 py-2.5 text-sm font-semibold placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/30 transition-all"/></div><div><label class="block text-xs font-extrabold uppercase tracking-wider text-slate-400 mb-1.5">Max Broadcasts per Day</label><input type="number" value="20" placeholder="" class="w-full bg-slate-100/70 dark:bg-slate-800/60 border border-transparent focus:border-primary-500 rounded-xl px-4 py-2.5 text-sm font-semibold placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/30 transition-all"/></div><div><label class="block text-xs font-extrabold uppercase tracking-wider text-slate-400 mb-1.5">Max Team Seats (default plan)</label><input type="number" value="5" placeholder="" class="w-full bg-slate-100/70 dark:bg-slate-800/60 border border-transparent focus:border-primary-500 rounded-xl px-4 py-2.5 text-sm font-semibold placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/30 transition-all"/></div></div></div>
+      </div>
+          </div>
+          <div data-pref-panel="otp" class="space-y-5 hidden">
+            <div class="bg-surface rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-soft p-5 flex flex-wrap items-center gap-4">
+              <span class="w-11 h-11 rounded-xl bg-primary-500/10 text-primary-500 flex items-center justify-center flex-none"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
+              <div><h2 class="text-base font-extrabold text-slate-900 dark:text-white">OTP Delivery</h2><p class="text-xs text-slate-400 font-medium">Configure OTP delivery methods</p></div>
+              <div class="ml-auto flex gap-2">
+                <button data-pref-refresh data-testid="pref-refresh-otp" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 text-xs font-extrabold text-slate-500 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>Refresh</button>
+                <button data-pref-save data-testid="pref-save-otp" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-primary-600 hover:bg-primary-700 text-white text-xs font-extrabold shadow-soft transition-colors"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2Z"/><path d="M17 21v-8H7v8M7 3v5h8"/></svg>Save Changes</button>
+              </div>
+            </div>
+            <div class="bg-surface rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-soft p-6">
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
+          <div><h3 class="text-base font-extrabold text-slate-900 dark:text-white">OTP Delivery Methods</h3><p class="text-xs text-slate-400 font-medium mt-0.5">Choose how one-time passwords reach your users.</p></div>
+          <div class="flex gap-2"></div>
+        </div>
+        <div><div class="grid sm:grid-cols-3 gap-4"><div class="flex items-center gap-4 rounded-xl border border-slate-200/80 dark:border-slate-800 p-4">
+          <span class="w-10 h-10 rounded-xl bg-primary-500/10 text-primary-500 flex items-center justify-center flex-none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2.5"/><path d="M12 18h.01"/></svg></span>
+          <div class="flex-1 min-w-0"><p class="text-sm font-extrabold text-slate-800 dark:text-slate-100">Email OTP</p><p class="text-xs text-slate-400 font-medium">Deliver codes by email</p></div>
+          <input type="checkbox" class="rm-switch pref-toggle" checked/>
+        </div><div class="flex items-center gap-4 rounded-xl border border-slate-200/80 dark:border-slate-800 p-4">
+          <span class="w-10 h-10 rounded-xl bg-primary-500/10 text-primary-500 flex items-center justify-center flex-none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2.5"/><path d="M12 18h.01"/></svg></span>
+          <div class="flex-1 min-w-0"><p class="text-sm font-extrabold text-slate-800 dark:text-slate-100">SMS OTP</p><p class="text-xs text-slate-400 font-medium">Deliver codes by SMS</p></div>
+          <input type="checkbox" class="rm-switch pref-toggle"/>
+        </div><div class="flex items-center gap-4 rounded-xl border border-slate-200/80 dark:border-slate-800 p-4">
+          <span class="w-10 h-10 rounded-xl bg-primary-500/10 text-primary-500 flex items-center justify-center flex-none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg></span>
+          <div class="flex-1 min-w-0"><p class="text-sm font-extrabold text-slate-800 dark:text-slate-100">WhatsApp OTP</p><p class="text-xs text-slate-400 font-medium">Deliver codes on WhatsApp</p></div>
+          <input type="checkbox" class="rm-switch pref-toggle" checked/>
+        </div></div></div>
+      </div><div class="bg-surface rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-soft p-6">
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
+          <div><h3 class="text-base font-extrabold text-slate-900 dark:text-white">OTP Behavior</h3><p class="text-xs text-slate-400 font-medium mt-0.5">Fine-tune expiry and retries.</p></div>
+          <div class="flex gap-2"></div>
+        </div>
+        <div><div class="grid sm:grid-cols-2 gap-4"><div><label class="block text-xs font-extrabold uppercase tracking-wider text-slate-400 mb-1.5">OTP Expiry (minutes)</label><input type="number" value="10" placeholder="" class="w-full bg-slate-100/70 dark:bg-slate-800/60 border border-transparent focus:border-primary-500 rounded-xl px-4 py-2.5 text-sm font-semibold placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/30 transition-all"/></div><div><label class="block text-xs font-extrabold uppercase tracking-wider text-slate-400 mb-1.5">Max Retry Attempts</label><input type="number" value="3" placeholder="" class="w-full bg-slate-100/70 dark:bg-slate-800/60 border border-transparent focus:border-primary-500 rounded-xl px-4 py-2.5 text-sm font-semibold placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/30 transition-all"/></div></div></div>
+      </div>
+          </div>
+          <div data-pref-panel="widget" class="space-y-5 hidden">
+            <div class="bg-surface rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-soft p-5 flex flex-wrap items-center gap-4">
+              <span class="w-11 h-11 rounded-xl bg-primary-500/10 text-primary-500 flex items-center justify-center flex-none"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg></span>
+              <div><h2 class="text-base font-extrabold text-slate-900 dark:text-white">Landing Widget</h2><p class="text-xs text-slate-400 font-medium">Configure dynamic landing widget</p></div>
+              <div class="ml-auto flex gap-2">
+                <button data-pref-refresh data-testid="pref-refresh-widget" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 text-xs font-extrabold text-slate-500 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>Refresh</button>
+                <button data-pref-save data-testid="pref-save-widget" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-primary-600 hover:bg-primary-700 text-white text-xs font-extrabold shadow-soft transition-colors"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2Z"/><path d="M17 21v-8H7v8M7 3v5h8"/></svg>Save Changes</button>
+              </div>
+            </div>
+            <div class="bg-surface rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-soft p-6">
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
+          <div><h3 class="text-base font-extrabold text-slate-900 dark:text-white">Landing Widget</h3><p class="text-xs text-slate-400 font-medium mt-0.5">Configure the dynamic chat widget on your landing pages.</p></div>
+          <div class="flex gap-2"></div>
+        </div>
+        <div><div class="grid sm:grid-cols-2 gap-4"><div><label class="block text-xs font-extrabold uppercase tracking-wider text-slate-400 mb-1.5">Widget Position</label><select class="w-full bg-slate-100/70 dark:bg-slate-800/60 border border-transparent focus:border-primary-500 rounded-xl px-4 py-2.5 text-sm font-semibold placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/30 transition-all text-slate-600 dark:text-slate-300"><option>Bottom right</option><option>Bottom left</option></select></div><div><label class="block text-xs font-extrabold uppercase tracking-wider text-slate-400 mb-1.5">Widget Color</label><input type="color" value="#10B981" placeholder="" class="w-full bg-slate-100/70 dark:bg-slate-800/60 border border-transparent focus:border-primary-500 rounded-xl px-4 py-2.5 text-sm font-semibold placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/30 transition-all"/></div></div><div class="mt-4"><div><label class="block text-xs font-extrabold uppercase tracking-wider text-slate-400 mb-1.5">Welcome Message</label><input type="text" value="Hi! How can we help you today?" placeholder="" class="w-full bg-slate-100/70 dark:bg-slate-800/60 border border-transparent focus:border-primary-500 rounded-xl px-4 py-2.5 text-sm font-semibold placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/30 transition-all"/></div></div><div class="mt-4"><div class="flex items-center justify-between gap-4 py-3 border-b border-slate-100 dark:border-slate-800/70 last:border-0">
+          <div><p class="text-sm font-extrabold text-slate-800 dark:text-slate-100">Enable landing page widget</p><p class="text-xs text-slate-400 font-medium mt-0.5">Show the WhatsApp chat bubble on all public pages.</p></div>
+          <input type="checkbox" class="rm-switch pref-toggle" checked data-testid="pref-widget-enable"/>
+        </div><div class="flex items-center justify-between gap-4 py-3 border-b border-slate-100 dark:border-slate-800/70 last:border-0">
+          <div><p class="text-sm font-extrabold text-slate-800 dark:text-slate-100">Show agent avatar</p><p class="text-xs text-slate-400 font-medium mt-0.5">Display the on-duty agent photo in the widget.</p></div>
+          <input type="checkbox" class="rm-switch pref-toggle" checked/>
+        </div></div></div>
+      </div>
+          </div>
+          <div data-pref-panel="maintenance" class="space-y-5 hidden">
+            <div class="bg-surface rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-soft p-5 flex flex-wrap items-center gap-4">
+              <span class="w-11 h-11 rounded-xl bg-primary-500/10 text-primary-500 flex items-center justify-center flex-none"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>
+              <div><h2 class="text-base font-extrabold text-slate-900 dark:text-white">Maintenance</h2><p class="text-xs text-slate-400 font-medium">Maintenance & error pages</p></div>
+              <div class="ml-auto flex gap-2">
+                <button data-pref-refresh data-testid="pref-refresh-maintenance" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 text-xs font-extrabold text-slate-500 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>Refresh</button>
+                <button data-pref-save data-testid="pref-save-maintenance" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-primary-600 hover:bg-primary-700 text-white text-xs font-extrabold shadow-soft transition-colors"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2Z"/><path d="M17 21v-8H7v8M7 3v5h8"/></svg>Save Changes</button>
+              </div>
+            </div>
+            <div class="bg-surface rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-soft p-6">
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
+          <div><h3 class="text-base font-extrabold text-slate-900 dark:text-white">Maintenance & Error Pages</h3><p class="text-xs text-slate-400 font-medium mt-0.5">Control downtime behavior and custom error pages.</p></div>
+          <div class="flex gap-2"></div>
+        </div>
+        <div><div class="flex items-center justify-between gap-4 py-3 border-b border-slate-100 dark:border-slate-800/70 last:border-0">
+          <div><p class="text-sm font-extrabold text-slate-800 dark:text-slate-100">Maintenance Mode</p><p class="text-xs text-slate-400 font-medium mt-0.5">Public pages show the maintenance screen; admins can still log in.</p></div>
+          <input type="checkbox" class="rm-switch pref-toggle" data-testid="pref-maint-mode"/>
+        </div><div class="mt-4"><label class="block text-xs font-extrabold uppercase tracking-wider text-slate-400 mb-1.5">Maintenance Message</label><textarea rows="3" class="w-full bg-slate-100/70 dark:bg-slate-800/60 border border-transparent focus:border-primary-500 rounded-xl px-4 py-2.5 text-sm font-semibold placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/30 transition-all">We are upgrading our servers. Back online by 6 PM IST — thank you for your patience.</textarea></div><div class="mt-4"><div><label class="block text-xs font-extrabold uppercase tracking-wider text-slate-400 mb-1.5">Allowed IPs (comma separated)</label><input type="text" value="103.21.40.11, 49.36.88.2" placeholder="" class="w-full bg-slate-100/70 dark:bg-slate-800/60 border border-transparent focus:border-primary-500 rounded-xl px-4 py-2.5 text-sm font-semibold placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/30 transition-all"/></div></div><div class="mt-4 flex gap-3"><a href="maintenance.html" class="text-xs font-extrabold text-primary-600 dark:text-primary-400 hover:underline">Preview maintenance page →</a><a href="404.html" class="text-xs font-extrabold text-primary-600 dark:text-primary-400 hover:underline">Preview 404 page →</a></div></div>
+      </div>
+          </div>
+          <div data-pref-panel="signup" class="space-y-5 hidden">
+            <div class="bg-surface rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-soft p-5 flex flex-wrap items-center gap-4">
+              <span class="w-11 h-11 rounded-xl bg-primary-500/10 text-primary-500 flex items-center justify-center flex-none"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg></span>
+              <div><h2 class="text-base font-extrabold text-slate-900 dark:text-white">Signup Customization</h2><p class="text-xs text-slate-400 font-medium">Signup agree line customization</p></div>
+              <div class="ml-auto flex gap-2">
+                <button data-pref-refresh data-testid="pref-refresh-signup" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 text-xs font-extrabold text-slate-500 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>Refresh</button>
+                <button data-pref-save data-testid="pref-save-signup" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-primary-600 hover:bg-primary-700 text-white text-xs font-extrabold shadow-soft transition-colors"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2Z"/><path d="M17 21v-8H7v8M7 3v5h8"/></svg>Save Changes</button>
+              </div>
+            </div>
+            <div class="bg-surface rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-soft p-6">
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
+          <div><h3 class="text-base font-extrabold text-slate-900 dark:text-white">Signup Customization</h3><p class="text-xs text-slate-400 font-medium mt-0.5">Customize the agreement line and consent on registration.</p></div>
+          <div class="flex gap-2"></div>
+        </div>
+        <div><div class="mb-4"><label class="block text-xs font-extrabold uppercase tracking-wider text-slate-400 mb-1.5">Agreement Line</label><textarea rows="3" class="w-full bg-slate-100/70 dark:bg-slate-800/60 border border-transparent focus:border-primary-500 rounded-xl px-4 py-2.5 text-sm font-semibold placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/30 transition-all">By creating an account, you agree to our {terms} and acknowledge our {privacy}.</textarea><p class="text-[11px] text-slate-400 font-semibold mt-2">Merge tags: {terms} {privacy} {app_name}</p></div><div class="flex items-center justify-between gap-4 py-3 border-b border-slate-100 dark:border-slate-800/70 last:border-0">
+          <div><p class="text-sm font-extrabold text-slate-800 dark:text-slate-100">Require terms acceptance</p><p class="text-xs text-slate-400 font-medium mt-0.5">Users must tick a checkbox before registering.</p></div>
+          <input type="checkbox" class="rm-switch pref-toggle" checked/>
+        </div><div class="flex items-center justify-between gap-4 py-3 border-b border-slate-100 dark:border-slate-800/70 last:border-0">
+          <div><p class="text-sm font-extrabold text-slate-800 dark:text-slate-100">Show privacy policy link</p><p class="text-xs text-slate-400 font-medium mt-0.5">Render the {privacy} merge tag as a link.</p></div>
+          <input type="checkbox" class="rm-switch pref-toggle" checked/>
+        </div><div class="flex items-center justify-between gap-4 py-3 border-b border-slate-100 dark:border-slate-800/70 last:border-0">
+          <div><p class="text-sm font-extrabold text-slate-800 dark:text-slate-100">Collect company name</p><p class="text-xs text-slate-400 font-medium mt-0.5">Add a company/workspace field to the signup form.</p></div>
+          <input type="checkbox" class="rm-switch pref-toggle"/>
+        </div></div>
+      </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="px-6 py-4 flex flex-wrap items-center justify-between gap-2 text-xs font-semibold text-slate-400 border-t border-slate-200/80 dark:border-slate-800">
+      <p>© 2026 <span class="rm-brand-text font-extrabold">RM Services</span> · All rights reserved</p>
+      <p>Crafted for WhatsApp · Ecommerce · CRM · CMS projects</p>
+    </footer>
+  </div>
+</div>
+
+<script src="assets/js/app.js"></script>
+</body>
+</html>

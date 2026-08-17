@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="indigo">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Under Maintenance · RM Services Admin</title>
+<link rel="icon" type="image/svg+xml" href="assets/img/logo.svg"/>
+<link rel="stylesheet" href="assets/fonts/fonts.css"/>
+<link rel="stylesheet" href="assets/css/tailwind.compiled.css"/>
+<link rel="stylesheet" href="assets/css/style.css"/>
+<script>(function(){if(localStorage.getItem('rm-rtl')==='1')document.documentElement.dir='rtl';var t=localStorage.getItem('rm-theme');if(t)document.documentElement.dataset.theme=t;if(localStorage.getItem('rm-dark')==='1'||(!localStorage.getItem('rm-dark')&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark')})();</script>
+</head>
+<body class="font-sans bg-base text-slate-800 dark:text-slate-200 min-h-screen">
+
+<div class="min-h-screen flex flex-col items-center justify-center p-6 relative overflow-hidden" data-testid="maintenance-page">
+  <div class="absolute inset-0 opacity-[0.06] pointer-events-none" style="background-image:url('assets/img/whatsapp-bg.svg')"></div>
+
+  <a href="index.html" class="relative flex items-center gap-3 mb-10 rm-fade-up" data-testid="maintenance-brand">
+    <img src="assets/img/logo.svg" class="w-11 h-11" alt="RM Services"/>
+    <div>
+      <p class="font-extrabold text-lg leading-tight text-slate-900 dark:text-white">RM <span class="rm-brand-text">Services</span></p>
+      <p class="text-[9px] uppercase tracking-[0.22em] text-slate-400 font-bold">Admin Suite</p>
+    </div>
+  </a>
+
+  <span class="relative rm-fade-up rm-d1 w-20 h-20 rounded-3xl bg-amber-500/10 text-amber-500 flex items-center justify-center mb-6">
+    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+  </span>
+  <h1 class="relative rm-fade-up rm-d2 text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">We'll be back soon</h1>
+  <p class="relative rm-fade-up rm-d3 text-sm text-slate-500 mt-3 max-w-md text-center leading-relaxed">We are rolling out a scheduled upgrade to make your dashboard faster. Everything is safe — the team expects to finish by <span class="font-bold text-slate-700 dark:text-slate-200">6:00 PM IST today</span>.</p>
+
+  <div class="relative rm-fade-up rm-d3 w-full max-w-sm mt-8">
+    <div class="flex items-center justify-between text-xs font-bold text-slate-400 mb-2"><span>Upgrade progress</span><span data-testid="maintenance-progress-label">68%</span></div>
+    <div class="h-2.5 rounded-full bg-slate-100 dark:bg-slate-800 overflow-hidden">
+      <div class="h-full w-[68%] rounded-full bg-gradient-to-r from-primary-500 to-primary-600" data-testid="maintenance-progress-bar"></div>
+    </div>
+  </div>
+
+  <div class="relative rm-fade-up rm-d4 flex flex-wrap items-center justify-center gap-3 mt-8">
+    <button data-demo-toast="We will email you when we are back (demo)" data-testid="maintenance-notify-btn" class="flex items-center gap-2 px-5 py-3 rounded-xl bg-primary-600 hover:bg-primary-700 text-white text-sm font-bold shadow-soft transition-colors">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>Notify Me
+    </button>
+    <a href="login.html" data-testid="maintenance-login-btn" class="flex items-center gap-2 px-5 py-3 rounded-xl border border-slate-200 dark:border-slate-700 text-sm font-bold text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="m10 17 5-5-5-5"/><path d="M15 12H3"/></svg>Admin Login
+    </a>
+  </div>
+
+  <p class="relative text-[10px] font-bold text-slate-400 mt-12 uppercase tracking-widest">Status: Scheduled Maintenance · © 2026 RM Services</p>
+</div>
+
+<script src="assets/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="indigo">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Product Features · RM Services</title>
+<meta name="description" content="Broadcasts, automation, CRM, analytics and more — explore every RM Services feature."/>
+<link rel="icon" type="image/svg+xml" href="assets/img/logo.svg"/>
+<link rel="stylesheet" href="assets/fonts/fonts.css"/>
+<link rel="stylesheet" href="assets/css/tailwind.compiled.css"/>
+<link rel="stylesheet" href="assets/css/style.css"/>
+<script>(function(){if(localStorage.getItem('rm-rtl')==='1')document.documentElement.dir='rtl';var t=localStorage.getItem('rm-theme');if(t)document.documentElement.dataset.theme=t;if(localStorage.getItem('rm-dark')==='1'||(!localStorage.getItem('rm-dark')&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark')})();</script>
+</head>
+<body class="font-sans bg-base text-slate-800 dark:text-slate-200 min-h-screen">
+
+<div class="relative min-h-screen overflow-hidden" data-testid="features-page">
+  <div class="absolute inset-0 opacity-[0.05] pointer-events-none" style="background-image:url('assets/img/whatsapp-bg.svg')"></div>
+  <header class="relative max-w-6xl mx-auto flex items-center gap-4 px-6 py-5">
+    <a href="landing.html" class="flex items-center gap-3" data-testid="features-brand">
+      <img src="assets/img/logo.svg" class="w-10 h-10" alt="RM Services"/>
+      <div>
+        <p class="font-extrabold text-base leading-tight text-slate-900 dark:text-white">RM <span class="rm-brand-text">Services</span></p>
+        <p class="text-[8px] uppercase tracking-[0.22em] text-slate-400 font-bold">Admin Suite</p>
+      </div>
+    </a>
+    <nav class="hidden md:flex items-center gap-6 mx-auto text-sm font-bold text-slate-500 dark:text-slate-400">
+      <a href="landing.html" class="hover:text-primary-500 transition-colors">Home</a>
+      <a href="features.html" class="hover:text-primary-500 transition-colors">Features</a>
+      <a href="pricing.html" class="hover:text-primary-500 transition-colors">Pricing</a>
+      <a href="faq.html" class="hover:text-primary-500 transition-colors">FAQ</a>
+      <a href="updates.html" class="hover:text-primary-500 transition-colors">Updates</a>
+    </nav>
+    <div class="ml-auto md:ml-0 flex items-center gap-2.5">
+      <button onclick="RM.toggleDark()" data-testid="features-dark-toggle" class="p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-surface text-slate-500 dark:text-slate-300 hover:scale-105 transition-transform" title="Toggle dark mode">
+        <svg class="dark:hidden" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="hidden dark:block" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+      </button>
+      <a href="login.html" class="hidden sm:block px-4 py-2.5 rounded-xl text-sm font-bold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">Sign in</a>
+      <a href="register-multi.html" class="px-4 py-2.5 rounded-xl bg-primary-600 hover:bg-primary-700 text-white text-sm font-bold shadow-soft transition-colors">Get Started</a>
+    </div>
+  </header>
+  <section class="relative max-w-3xl mx-auto text-center px-6 pt-12 pb-10">
+    <span class="rm-fade-up inline-block px-3 py-1 rounded-full bg-primary-500/10 text-primary-600 dark:text-primary-300 text-[10px] font-extrabold uppercase tracking-widest mb-5">Product Features</span>
+    <h1 class="rm-fade-up rm-d1 text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.1]">Every feature your WhatsApp<br/>growth engine needs</h1>
+    <p class="rm-fade-up rm-d2 text-base text-slate-500 mt-5 max-w-xl mx-auto leading-relaxed">From first hello to closed deal — broadcasts, automation, CRM and analytics in one admin suite.</p>
+  </section>
+  <section class="relative max-w-6xl mx-auto px-6 pb-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-5" data-testid="features-grid">
+      <div class="rm-card-hover bg-surface rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-soft p-6">
+        <span class="w-11 h-11 rounded-xl bg-primary-500/12 text-primary-500 flex items-center justify-center mb-4"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg></span>
+        <h3 class="font-extrabold text-slate-900 dark:text-white">Smart Broadcasts</h3>
+        <p class="text-sm text-slate-500 mt-1.5 leading-relaxed">Segment audiences, personalise with variables and schedule sends for the perfect hour.</p>
+      </div>
+      <div class="rm-card-hover bg-surface rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-soft p-6">
+        <span class="w-11 h-11 rounded-xl bg-primary-500/12 text-primary-500 flex items-center justify-center mb-4"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg></span>
+        <h3 class="font-extrabold text-slate-900 dark:text-white">Shared Team Inbox</h3>
+        <p class="text-sm text-slate-500 mt-1.5 leading-relaxed">One WhatsApp number, your whole team. Assign chats, add private notes, never miss a lead.</p>
+      </div>
+      <div class="rm-card-hover bg-surface rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-soft p-6">
+        <span class="w-11 h-11 rounded-xl bg-primary-500/12 text-primary-500 flex items-center justify-center mb-4"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
+        <h3 class="font-extrabold text-slate-900 dark:text-white">No-Code Automations</h3>
+        <p class="text-sm text-slate-500 mt-1.5 leading-relaxed">Keyword triggers, welcome journeys and away messages — built in minutes, not sprints.</p>
+      </div>
+      <div class="rm-card-hover bg-surface rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-soft p-6">
+        <span class="w-11 h-11 rounded-xl bg-primary-500/12 text-primary-500 flex items-center justify-center mb-4"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="7" rx="1.5"/><rect x="3" y="14" width="9" height="7" rx="1.5"/><rect x="16" y="14" width="5" height="7" rx="1.5"/></svg></span>
+        <h3 class="font-extrabold text-slate-900 dark:text-white">Template Builder</h3>
+        <p class="text-sm text-slate-500 mt-1.5 leading-relaxed">Design Meta-approved templates with headers, media, quick-reply buttons and live phone preview.</p>
+      </div>
+      <div class="rm-card-hover bg-surface rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-soft p-6">
+        <span class="w-11 h-11 rounded-xl bg-primary-500/12 text-primary-500 flex items-center justify-center mb-4"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="5" height="18" rx="1"/><rect x="10" y="3" width="5" height="12" rx="1"/><rect x="17" y="3" width="5" height="8" rx="1"/></svg></span>
+        <h3 class="font-extrabold text-slate-900 dark:text-white">CRM & Kanban Pipeline</h3>
+        <p class="text-sm text-slate-500 mt-1.5 leading-relaxed">Drag deals across stages, log every touchpoint and forecast revenue without spreadsheets.</p>
+      </div>
+      <div class="rm-card-hover bg-surface rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-soft p-6">
+        <span class="w-11 h-11 rounded-xl bg-primary-500/12 text-primary-500 flex items-center justify-center mb-4"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
+        <h3 class="font-extrabold text-slate-900 dark:text-white">Campaign Calendar</h3>
+        <p class="text-sm text-slate-500 mt-1.5 leading-relaxed">Plan broadcasts and follow-ups on a visual calendar with month and week views.</p>
+      </div>
+      <div class="rm-card-hover bg-surface rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-soft p-6">
+        <span class="w-11 h-11 rounded-xl bg-primary-500/12 text-primary-500 flex items-center justify-center mb-4"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 14 4-4 4 3 5-6"/></svg></span>
+        <h3 class="font-extrabold text-slate-900 dark:text-white">Realtime Analytics</h3>
+        <p class="text-sm text-slate-500 mt-1.5 leading-relaxed">Delivery, read and reply rates per campaign, agent and template — export to Excel anytime.</p>
+      </div>
+      <div class="rm-card-hover bg-surface rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-soft p-6">
+        <span class="w-11 h-11 rounded-xl bg-primary-500/12 text-primary-500 flex items-center justify-center mb-4"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+        <h3 class="font-extrabold text-slate-900 dark:text-white">Team Roles & Permissions</h3>
+        <p class="text-sm text-slate-500 mt-1.5 leading-relaxed">Admin, manager and agent roles with granular control over who sees and sends what.</p>
+      </div>
+      <div class="rm-card-hover bg-surface rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-soft p-6">
+        <span class="w-11 h-11 rounded-xl bg-primary-500/12 text-primary-500 flex items-center justify-center mb-4"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1 1 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg></span>
+        <h3 class="font-extrabold text-slate-900 dark:text-white">Official Meta API</h3>
+        <p class="text-sm text-slate-500 mt-1.5 leading-relaxed">Verified business number, high messaging limits and zero ban risk — fully policy compliant.</p>
+      </div>
+  </section>
+  <section class="relative max-w-4xl mx-auto px-6 pb-16">
+    <div class="rounded-2xl bg-gradient-to-br from-primary-600 to-primary-700 p-10 text-center relative overflow-hidden">
+      <div class="absolute inset-0 opacity-15" style="background-image:url('assets/img/whatsapp-bg.svg')"></div>
+      <h3 class="relative text-white font-extrabold text-2xl">See every feature in action</h3>
+      <p class="relative text-white/75 text-sm mt-2 max-w-md mx-auto">Start the 14-day trial and explore the full admin suite with your own number.</p>
+      <a href="register-multi.html" class="relative inline-flex items-center gap-2 mt-6 bg-white text-primary-700 text-sm font-extrabold rounded-xl px-7 py-3.5 hover:bg-primary-50 transition-colors" data-testid="features-cta-btn">Start Free Trial</a>
+    </div>
+  </section>
+
+  <footer class="relative border-t border-slate-200/80 dark:border-slate-800 px-6 py-8">
+    <div class="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-4">
+      <p class="text-xs font-semibold text-slate-400">© 2026 <span class="rm-brand-text font-extrabold">RM Services</span> · Made with care in India</p>
+      <nav class="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs font-bold text-slate-400">
+        <a href="features.html" class="hover:text-primary-500 transition-colors">Features</a>
+        <a href="pricing.html" class="hover:text-primary-500 transition-colors">Pricing</a>
+        <a href="faq.html" class="hover:text-primary-500 transition-colors">FAQ</a>
+        <a href="updates.html" class="hover:text-primary-500 transition-colors">Updates</a>
+        <a href="terms.html" class="hover:text-primary-500 transition-colors">Terms</a>
+        <a href="privacy.html" class="hover:text-primary-500 transition-colors">Privacy</a>
+        <a href="contact.html" class="hover:text-primary-500 transition-colors">Contact</a>
+      </nav>
+    </div>
+  </footer>
+</div>
+
+<script src="assets/js/app.js"></script>
+</body>
+</html>

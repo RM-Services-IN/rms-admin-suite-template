@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="indigo">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Page Not Found · RM Services Admin</title>
+<link rel="icon" type="image/svg+xml" href="assets/img/logo.svg"/>
+<link rel="stylesheet" href="assets/fonts/fonts.css"/>
+<link rel="stylesheet" href="assets/css/tailwind.compiled.css"/>
+<link rel="stylesheet" href="assets/css/style.css"/>
+<script>(function(){if(localStorage.getItem('rm-rtl')==='1')document.documentElement.dir='rtl';var t=localStorage.getItem('rm-theme');if(t)document.documentElement.dataset.theme=t;if(localStorage.getItem('rm-dark')==='1'||(!localStorage.getItem('rm-dark')&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark')})();</script>
+</head>
+<body class="font-sans bg-base text-slate-800 dark:text-slate-200 min-h-screen">
+
+<div class="min-h-screen flex flex-col items-center justify-center p-6 relative overflow-hidden" data-testid="error-404-page">
+  <div class="absolute inset-0 opacity-[0.06] pointer-events-none" style="background-image:url('assets/img/whatsapp-bg.svg')"></div>
+
+  <a href="index.html" class="relative flex items-center gap-3 mb-10 rm-fade-up" data-testid="error-brand">
+    <img src="assets/img/logo.svg" class="w-11 h-11" alt="RM Services"/>
+    <div>
+      <p class="font-extrabold text-lg leading-tight text-slate-900 dark:text-white">RM <span class="rm-brand-text">Services</span></p>
+      <p class="text-[9px] uppercase tracking-[0.22em] text-slate-400 font-bold">Admin Suite</p>
+    </div>
+  </a>
+
+  <p class="relative rm-fade-up rm-d1 text-[7rem] sm:text-[10rem] font-extrabold leading-none tracking-tight rm-brand-text select-none" data-testid="error-code">404</p>
+  <h1 class="relative rm-fade-up rm-d2 text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white mt-2">This page wandered off</h1>
+  <p class="relative rm-fade-up rm-d3 text-sm text-slate-500 mt-3 max-w-md text-center leading-relaxed">The page you are looking for doesn't exist, was moved, or you mistyped the address. Let's get you back to safety.</p>
+
+  <div class="relative rm-fade-up rm-d4 flex flex-wrap items-center justify-center gap-3 mt-8">
+    <a href="index.html" data-testid="error-back-btn" class="flex items-center gap-2 px-5 py-3 rounded-xl bg-primary-600 hover:bg-primary-700 text-white text-sm font-bold shadow-soft transition-colors">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>Back to Dashboard
+    </a>
+    <a href="search.html" data-testid="error-search-btn" class="flex items-center gap-2 px-5 py-3 rounded-xl border border-slate-200 dark:border-slate-700 text-sm font-bold text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>Search Pages
+    </a>
+  </div>
+
+  <p class="relative text-[10px] font-bold text-slate-400 mt-12 uppercase tracking-widest">Error 404 · © 2026 RM Services</p>
+</div>
+
+<script src="assets/js/app.js"></script>
+</body>
+</html>
